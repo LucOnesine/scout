@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "K2TH Scout",
+    "slug": "k2th-scout",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "k2th",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#FFFFFF",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#4C1D95",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#4C1D95",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 140,
+          "resizeMode": "contain",
+          "dark": {
+            "backgroundColor": "#2E1065",
+            "image": "./assets/splash-icon.png"
+          }
+        }
+      ],
+      "expo-sqlite",
+      "expo-audio",
+      "expo-notifications"
+    ]
+  }
+}
