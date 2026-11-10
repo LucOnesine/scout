@@ -1,10 +1,11 @@
-import { BookOpen, CodeXml, Compass, Music, Pencil, Plus, Trash2 } from 'lucide-react-native';
-import type { ComponentType } from 'react';
-import { Alert, FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { BookOpen, CodeXml, Compass, Music, Pencil, Plus, Share2, Trash2 } from 'lucide-react-native';
+import { type ComponentType, useState } from 'react';
+import { ActivityIndicator, Alert, FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDatabase } from '../../context/DatabaseContext';
 import type { ContentItem, ContentKind } from '../../db/repositoryTypes';
 import { confirmDelete } from '../../lib/confirm';
+import { exportContent } from '../../lib/contentExport';
 import { cardShadow, fonts, type ThemeColors, themed } from '../../theme/theme';
 import type { ChantItem, CodeItem, KojaItem, TechniqueItem } from '../../types';
 import { useAdminNav } from '../nav';
@@ -72,6 +73,23 @@ export function AdminListScreen({
   const items = itemsByKind[kind];
   const meta = META[kind];
 
+  const [exporting, setExporting] = useState(false);
+
+  const handleExport = async () => {
+    if (exporting) {
+      return;
+    }
+    setExporting(true);
+    try {
+      await exportContent({ codes, kojas, techniques, chants });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'L’export a échoué.';
+      Alert.alert('Export impossible', message);
+    } finally {
+      setExporting(false);
+    }
+  };
+
   const remove = (item: ContentItem) => {
     const { title } = describeItem(kind, item);
     confirmDelete(`Supprimer « ${title} » ? Cette action est définitive.`, () => {
@@ -99,8 +117,9 @@ export function AdminListScreen({
             <View style={styles.introCard}>
               <Text style={styles.introTitle}>Gestion des contenus</Text>
               <Text style={styles.introText}>
-                Les modifications sont enregistrées dans la base SQLite et visibles
-                immédiatement dans l’application K2TH Scout.
+                Contenu enregistré dans la base SQLite locale (hors-ligne).
+                Exporte-le pour l’intégrer à l’application et le partager aux
+                utilisateurs lors de la prochaine publication.
               </Text>
             </View>
 
@@ -183,6 +202,23 @@ export function AdminListScreen({
       />
 
       <View style={styles.footer}>
+        <Pressable
+          onPress={handleExport}
+          disabled={exporting}
+          accessibilityRole="button"
+          accessibilityLabel="Exporter le contenu"
+          accessibilityState={{ disabled: exporting }}
+          style={({ pressed }) => [styles.exportButton, pressed && styles.exportButtonPressed]}
+        >
+          {exporting ? (
+            <ActivityIndicator size="small" color={colors.primary} />
+          ) : (
+            <Share2 size={16} color={colors.primary} strokeWidth={2.4} />
+          )}
+          <Text style={styles.exportText}>
+            {exporting ? 'Export en cours…' : 'Exporter le contenu'}
+          </Text>
+        </Pressable>
         <Pressable
           onPress={() => nav.push({ name: 'editor', kind, itemId: null })}
           accessibilityRole="button"
@@ -377,9 +413,29 @@ const makeStyles = themed((colors: ThemeColors) => StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 10,
     paddingBottom: 4,
+    gap: 8,
     borderTopWidth: 1,
     borderTopColor: colors.border,
     backgroundColor: colors.surface,
+  },
+  exportButton: {
+    height: 42,
+    borderRadius: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    borderWidth: 1,
+    borderColor: colors.primary,
+    backgroundColor: colors.soft,
+  },
+  exportButtonPressed: {
+    backgroundColor: colors.border,
+  },
+  exportText: {
+    fontFamily: fonts.bold,
+    fontSize: 13,
+    color: colors.primary,
   },
   addButton: {
     height: 48,

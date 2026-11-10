@@ -10,15 +10,13 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
-import { Platform, View } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { DatabaseProvider } from '../context/DatabaseContext';
 import { SettingsProvider, useTheme } from '../context/SettingsContext';
 import { UiProvider } from '../context/UiContext';
 
-if (Platform.OS !== 'web') {
-  SplashScreen.preventAutoHideAsync().catch(() => {});
-}
+SplashScreen.preventAutoHideAsync().catch(() => {});
 
 function RootContent() {
   const { colors, isDark } = useTheme();
@@ -31,7 +29,7 @@ function RootContent() {
   });
 
   useEffect(() => {
-    if (fontsLoaded && Platform.OS !== 'web') {
+    if (fontsLoaded) {
       SplashScreen.hideAsync().catch(() => {});
     }
   }, [fontsLoaded]);

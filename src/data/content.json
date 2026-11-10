@@ -1,0 +1,747 @@
+{
+  "version": 1,
+  "codes": [
+    {
+      "id": 1,
+      "name": "Code Morse",
+      "icon": "📡",
+      "desc": "Communication par points et tirets",
+      "type": "morse",
+      "table": [
+        {
+          "l": "A",
+          "c": ".-"
+        },
+        {
+          "l": "B",
+          "c": "-..."
+        },
+        {
+          "l": "C",
+          "c": "-.-."
+        },
+        {
+          "l": "D",
+          "c": "-.."
+        },
+        {
+          "l": "E",
+          "c": "."
+        },
+        {
+          "l": "F",
+          "c": "..-."
+        },
+        {
+          "l": "G",
+          "c": "--."
+        },
+        {
+          "l": "H",
+          "c": "...."
+        },
+        {
+          "l": "I",
+          "c": ".."
+        },
+        {
+          "l": "J",
+          "c": ".---"
+        },
+        {
+          "l": "K",
+          "c": "-.-"
+        },
+        {
+          "l": "L",
+          "c": ".-.."
+        },
+        {
+          "l": "M",
+          "c": "--"
+        },
+        {
+          "l": "N",
+          "c": "-."
+        },
+        {
+          "l": "O",
+          "c": "---"
+        },
+        {
+          "l": "P",
+          "c": ".--."
+        },
+        {
+          "l": "Q",
+          "c": "--.-"
+        },
+        {
+          "l": "R",
+          "c": ".-."
+        },
+        {
+          "l": "S",
+          "c": "..."
+        },
+        {
+          "l": "T",
+          "c": "-"
+        },
+        {
+          "l": "U",
+          "c": "..-"
+        },
+        {
+          "l": "V",
+          "c": "...-"
+        },
+        {
+          "l": "W",
+          "c": ".--"
+        },
+        {
+          "l": "X",
+          "c": "-..-"
+        },
+        {
+          "l": "Y",
+          "c": "-.--"
+        },
+        {
+          "l": "Z",
+          "c": "--.."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Code Scout",
+      "icon": "⚜️",
+      "desc": "Chiffrement traditionnel scout en symboles",
+      "type": "alpha",
+      "table": [
+        {
+          "l": "A",
+          "c": "●"
+        },
+        {
+          "l": "B",
+          "c": "●●"
+        },
+        {
+          "l": "C",
+          "c": "●●●"
+        },
+        {
+          "l": "D",
+          "c": "○"
+        },
+        {
+          "l": "E",
+          "c": "○●"
+        },
+        {
+          "l": "F",
+          "c": "○●●"
+        },
+        {
+          "l": "G",
+          "c": "●○"
+        },
+        {
+          "l": "H",
+          "c": "●●○"
+        },
+        {
+          "l": "I",
+          "c": "○○"
+        },
+        {
+          "l": "J",
+          "c": "△"
+        },
+        {
+          "l": "K",
+          "c": "△●"
+        },
+        {
+          "l": "L",
+          "c": "△●●"
+        },
+        {
+          "l": "M",
+          "c": "▽"
+        },
+        {
+          "l": "N",
+          "c": "▽●"
+        },
+        {
+          "l": "O",
+          "c": "▽●●"
+        },
+        {
+          "l": "P",
+          "c": "□"
+        },
+        {
+          "l": "Q",
+          "c": "□●"
+        },
+        {
+          "l": "R",
+          "c": "□●●"
+        },
+        {
+          "l": "S",
+          "c": "◇"
+        },
+        {
+          "l": "T",
+          "c": "◇●"
+        },
+        {
+          "l": "U",
+          "c": "◇●●"
+        },
+        {
+          "l": "V",
+          "c": "★"
+        },
+        {
+          "l": "W",
+          "c": "★●"
+        },
+        {
+          "l": "X",
+          "c": "★●●"
+        },
+        {
+          "l": "Y",
+          "c": "☆"
+        },
+        {
+          "l": "Z",
+          "c": "☆●"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sémaphore",
+      "icon": "🚩",
+      "desc": "Signaux visuels par positions de drapeaux",
+      "type": "semaphore",
+      "table": [
+        {
+          "l": "A",
+          "c": "Pos 1-2"
+        },
+        {
+          "l": "B",
+          "c": "Pos 1-3"
+        },
+        {
+          "l": "C",
+          "c": "Pos 1-4"
+        },
+        {
+          "l": "D",
+          "c": "Pos 1-5"
+        },
+        {
+          "l": "E",
+          "c": "Pos 1-6"
+        },
+        {
+          "l": "F",
+          "c": "Pos 1-7"
+        },
+        {
+          "l": "G",
+          "c": "Pos 1-8"
+        },
+        {
+          "l": "H",
+          "c": "Pos 2-3"
+        },
+        {
+          "l": "I",
+          "c": "Pos 2-4"
+        },
+        {
+          "l": "K",
+          "c": "Pos 2-5"
+        },
+        {
+          "l": "L",
+          "c": "Pos 2-6"
+        },
+        {
+          "l": "M",
+          "c": "Pos 2-7"
+        },
+        {
+          "l": "N",
+          "c": "Pos 2-8"
+        },
+        {
+          "l": "O",
+          "c": "Pos 3-4"
+        },
+        {
+          "l": "P",
+          "c": "Pos 3-5"
+        },
+        {
+          "l": "Q",
+          "c": "Pos 3-6"
+        },
+        {
+          "l": "R",
+          "c": "Pos 3-7"
+        },
+        {
+          "l": "S",
+          "c": "Pos 3-8"
+        },
+        {
+          "l": "T",
+          "c": "Pos 4-5"
+        },
+        {
+          "l": "U",
+          "c": "Pos 4-6"
+        },
+        {
+          "l": "V",
+          "c": "Pos 4-8"
+        },
+        {
+          "l": "W",
+          "c": "Pos 5-6"
+        },
+        {
+          "l": "X",
+          "c": "Pos 5-7"
+        },
+        {
+          "l": "Y",
+          "c": "Pos 5-8"
+        },
+        {
+          "l": "Z",
+          "c": "Pos 6-7"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Code Pigpen",
+      "icon": "🔲",
+      "desc": "Substitution géométrique par grilles",
+      "type": "pigpen",
+      "table": [
+        {
+          "l": "A",
+          "c": "⌐"
+        },
+        {
+          "l": "B",
+          "c": "¬"
+        },
+        {
+          "l": "C",
+          "c": "└"
+        },
+        {
+          "l": "D",
+          "c": "┐"
+        },
+        {
+          "l": "E",
+          "c": "┘"
+        },
+        {
+          "l": "F",
+          "c": "┌"
+        },
+        {
+          "l": "G",
+          "c": "⌐·"
+        },
+        {
+          "l": "H",
+          "c": "¬·"
+        },
+        {
+          "l": "I",
+          "c": "└·"
+        },
+        {
+          "l": "J",
+          "c": "∧"
+        },
+        {
+          "l": "K",
+          "c": "∨"
+        },
+        {
+          "l": "L",
+          "c": ">"
+        },
+        {
+          "l": "M",
+          "c": "<"
+        },
+        {
+          "l": "N",
+          "c": "∧·"
+        },
+        {
+          "l": "O",
+          "c": "∨·"
+        },
+        {
+          "l": "P",
+          "c": ">·"
+        },
+        {
+          "l": "Q",
+          "c": "<·"
+        },
+        {
+          "l": "R",
+          "c": "⊓"
+        },
+        {
+          "l": "S",
+          "c": "⊔"
+        },
+        {
+          "l": "T",
+          "c": "⊣"
+        },
+        {
+          "l": "U",
+          "c": "⊢"
+        },
+        {
+          "l": "V",
+          "c": "⊓·"
+        },
+        {
+          "l": "W",
+          "c": "⊔·"
+        },
+        {
+          "l": "X",
+          "c": "⊣·"
+        },
+        {
+          "l": "Y",
+          "c": "⊢·"
+        },
+        {
+          "l": "Z",
+          "c": "×"
+        }
+      ]
+    }
+  ],
+  "kojas": [
+    {
+      "id": 1,
+      "title": "Fondation du Scoutisme",
+      "date": "1907",
+      "imageKey": "fondation",
+      "coverKey": "",
+      "desc": "Robert Baden-Powell fonde le mouvement scout lors du premier camp à Brownsea Island en Angleterre en 1907. Ce mouvement éducatif mondial allait transformer des millions de jeunes à travers tous les continents grâce aux valeurs de fraternité, de service et de dépassement de soi.",
+      "tags": [
+        "Histoire",
+        "1907",
+        "Fondateur"
+      ],
+      "photos": []
+    },
+    {
+      "id": 2,
+      "title": "Les Valeurs Scouts",
+      "date": "Tradition",
+      "imageKey": "valeurs",
+      "coverKey": "",
+      "desc": "Le scoutisme repose sur des piliers fondamentaux : le service aux autres, la fraternité universelle, le respect profond de la nature, et le développement du caractère de chaque jeune. Ces valeurs guident chaque scout dans sa vie quotidienne.",
+      "tags": [
+        "Valeurs",
+        "Tradition",
+        "Foi"
+      ],
+      "photos": []
+    },
+    {
+      "id": 3,
+      "title": "K2TH à Madagascar",
+      "date": "2010",
+      "imageKey": "k2th",
+      "coverKey": "",
+      "desc": "La section K2TH — Kaody Koja Teknika Hira — est créée pour rassembler les jeunes scouts malgaches autour des valeurs du scoutisme et de la culture locale. Le code, l'histoire, la technique et le chant forment les quatre piliers de cette fraternité.",
+      "tags": [
+        "K2TH",
+        "Madagascar",
+        "Scout"
+      ],
+      "photos": []
+    },
+    {
+      "id": 4,
+      "title": "Grand Camp National 2023",
+      "date": "Août 2023",
+      "imageKey": "camp",
+      "coverKey": "",
+      "desc": "Le grand camp national réunit plus de 500 scouts de toutes les régions de Madagascar. Des activités de cohésion, de survie et d'entraide ont marqué cet événement mémorable sous les étoiles de l'île Rouge.",
+      "tags": [
+        "Camp",
+        "2023",
+        "National"
+      ],
+      "photos": []
+    }
+  ],
+  "techniques": [
+    {
+      "id": 1,
+      "name": "Nœuds de base",
+      "icon": "🪢",
+      "iconKey": "",
+      "cat": "Survie",
+      "level": "Débutant",
+      "levelColor": "#10B981",
+      "desc": "Les nœuds sont essentiels pour tout scout. Maîtriser ces techniques permet de construire des abris, sécuriser des charges et progresser en toute sécurité dans la nature.",
+      "steps": [
+        {
+          "text": "Nœud plat : Croiser les extrémités, gauche sur droite puis droite sur gauche. Tirer sur les deux bouts pour serrer.",
+          "imageKey": ""
+        },
+        {
+          "text": "Nœud de cabestan : Faire deux tours autour d'un support puis croiser les bouts sous eux-mêmes.",
+          "imageKey": ""
+        },
+        {
+          "text": "Nœud de chaise : Former une boucle, passer le bout dedans, derrière la corde principale et ressortir dans la boucle.",
+          "imageKey": ""
+        },
+        {
+          "text": "Nœud de prussik : Enrouler 2-3 fois autour d'une corde portante pour créer une fixation mobile.",
+          "imageKey": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Boussole & Orientation",
+      "icon": "🧭",
+      "iconKey": "",
+      "cat": "Navigation",
+      "level": "Intermédiaire",
+      "levelColor": "#F59E0B",
+      "desc": "Savoir s'orienter sans GPS est fondamental pour tout scout. La boussole combinée à la carte topographique permet de naviguer en toute sécurité en forêt ou en montagne.",
+      "steps": [
+        {
+          "text": "Tenir la boussole à plat dans la paume de la main, loin de tout métal.",
+          "imageKey": ""
+        },
+        {
+          "text": "Tourner le boîtier jusqu'à aligner le N du cadran avec l'aiguille rouge pointant Nord.",
+          "imageKey": ""
+        },
+        {
+          "text": "Lire l'azimut en degrés sur le cadran rotatif pour obtenir sa direction.",
+          "imageKey": ""
+        },
+        {
+          "text": "Se déplacer en suivant la flèche de direction, en maintenant l'aiguille alignée sur N.",
+          "imageKey": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Premiers Secours",
+      "icon": "🩹",
+      "iconKey": "",
+      "cat": "Santé",
+      "level": "Essentiel",
+      "levelColor": "#EF4444",
+      "desc": "Les gestes de premiers secours peuvent sauver des vies. Chaque scout doit connaître les gestes essentiels pour intervenir rapidement avant l'arrivée des secours professionnels.",
+      "steps": [
+        {
+          "text": "Évaluer la sécurité de la zone avant de s'approcher de la victime.",
+          "imageKey": ""
+        },
+        {
+          "text": "Vérifier la conscience : appeler par son prénom et secouer doucement les épaules.",
+          "imageKey": ""
+        },
+        {
+          "text": "Alerter les secours : composer le 15 (SAMU), 18 (pompiers) ou 112 (urgence).",
+          "imageKey": ""
+        },
+        {
+          "text": "Position latérale de sécurité (PLS) si inconscient mais respirant normalement.",
+          "imageKey": ""
+        },
+        {
+          "text": "RCP si absence de respiration : 30 compressions thoraciques + 2 insufflations.",
+          "imageKey": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Construction de camp",
+      "icon": "⛺",
+      "iconKey": "",
+      "cat": "Campisme",
+      "level": "Intermédiaire",
+      "levelColor": "#F59E0B",
+      "desc": "L'installation d'un camp est une compétence clé du scoutisme. Un bon campement assure confort, sécurité et impact minimal sur l'environnement naturel.",
+      "steps": [
+        {
+          "text": "Choisir un emplacement plat, protégé du vent et éloigné des zones inondables.",
+          "imageKey": ""
+        },
+        {
+          "text": "Déblayer la zone de pierres, racines et branches qui gêneraient le montage.",
+          "imageKey": ""
+        },
+        {
+          "text": "Tendre la toile de tente dans le sens opposé du vent dominant.",
+          "imageKey": ""
+        },
+        {
+          "text": "Fixer les sardines à 45° dans le sol et ajuster les haubans pour stabiliser.",
+          "imageKey": ""
+        },
+        {
+          "text": "Vérifier l'étanchéité et créer un drainage autour en cas de pluie.",
+          "imageKey": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Allumer un feu",
+      "icon": "🔥",
+      "iconKey": "",
+      "cat": "Survie",
+      "level": "Intermédiaire",
+      "levelColor": "#F59E0B",
+      "desc": "Le feu procure chaleur, lumière et moyen de cuisiner. Sa maîtrise sécurisée est fondamentale dans toute situation de survie en plein air.",
+      "steps": [
+        {
+          "text": "Rassembler trois types de combustible : amadou (herbes sèches), petit bois et bûches.",
+          "imageKey": ""
+        },
+        {
+          "text": "Préparer un lit d'amadou au centre de votre zone de feu dégagée.",
+          "imageKey": ""
+        },
+        {
+          "text": "Disposer le petit bois en structure tipi autour de l'amadou.",
+          "imageKey": ""
+        },
+        {
+          "text": "Enflammer l'amadou avec une allumette et souffler doucement à la base.",
+          "imageKey": ""
+        },
+        {
+          "text": "Ajouter progressivement du bois de plus en plus gros au fur et à mesure.",
+          "imageKey": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Signaux de détresse",
+      "icon": "🔦",
+      "iconKey": "",
+      "cat": "Comm.",
+      "level": "Avancé",
+      "levelColor": "#8B5CF6",
+      "desc": "Les signaux visuels permettent de communiquer à grande distance. Lumière, miroir ou fumée sont utilisés pour alerter les secours en cas d'urgence.",
+      "steps": [
+        {
+          "text": "SOS en morse : 3 signaux courts (···), 3 longs (—), 3 courts (···).",
+          "imageKey": ""
+        },
+        {
+          "text": "Miroir de signalisation : orienter le reflet du soleil vers l'avion ou bateau cible.",
+          "imageKey": ""
+        },
+        {
+          "text": "Fumée blanche (bois vert) visible en forêt, fumée noire (caoutchouc) en pleine mer.",
+          "imageKey": ""
+        },
+        {
+          "text": "Sémaphore : apprendre les 26 positions de base pour communiquer avec les drapeaux.",
+          "imageKey": ""
+        }
+      ]
+    }
+  ],
+  "chants": [
+    {
+      "id": 1,
+      "title": "Hymne K2TH",
+      "artist": "Tradition Scout",
+      "dur": "3:24",
+      "genre": "Hymne",
+      "gradient": [
+        "#6D28D9",
+        "#8B5CF6"
+      ],
+      "audioKey": "",
+      "lyrics": "Toujours prêts, toujours prêts\nNous marchons sous la bannière\nDe la fleur de lys dorée\nScouts, soyons fidèles\n\n— Refrain —\nK2TH en avant\nPour Dieu et pour la patrie\nNos cœurs sont vaillants\nNos mains sont unies\n\n— Verse 2 —\nSous le ciel de Madagascar\nNos voix s'élèvent en chœur\nPour la gloire et la fierté\nDe notre île en fleur"
+    },
+    {
+      "id": 2,
+      "title": "Chant du Départ",
+      "artist": "K2TH",
+      "dur": "2:48",
+      "genre": "Marche",
+      "gradient": [
+        "#7C3AED",
+        "#A78BFA"
+      ],
+      "audioKey": "",
+      "lyrics": "En route, en route\nLes scouts sont en marche\nSous le soleil de Madagascar\nNous chantons la liberté\n\n— Refrain —\nK2TH, K2TH\nToujours prêts, toujours là\nPour servir et protéger\nNotre belle île dorée\n\n— Verse 2 —\nNos pas résonnent sur la terre\nNos cœurs battent à l'unisson\nFrères scouts, avançons ensemble\nVers notre noble mission"
+    },
+    {
+      "id": 3,
+      "title": "Feu de Camp",
+      "artist": "Traditional",
+      "dur": "4:12",
+      "genre": "Folk",
+      "gradient": [
+        "#5B21B6",
+        "#7C3AED"
+      ],
+      "audioKey": "",
+      "lyrics": "Autour du feu ce soir\nNous sommes tous réunis\nLes étoiles dans le ciel\nGuident nos esprits\n\n— Refrain —\nChante, chante avec nous\nLa nuit est belle et douce\nScouts de tous les pays\nUnis dans la nuit rousse\n\n— Verse 2 —\nLes flammes dansent et brillent\nComme nos âmes en fête\nCette nuit restera\nGravée dans nos mémoires"
+    },
+    {
+      "id": 4,
+      "title": "Promesse Scout",
+      "artist": "K2TH Choir",
+      "dur": "2:55",
+      "genre": "Cérémonie",
+      "gradient": [
+        "#4C1D95",
+        "#6D28D9"
+      ],
+      "audioKey": "",
+      "lyrics": "Je promets sur mon honneur\nDe faire de mon mieux\nPour servir Dieu et mon pays\nAider mon prochain en tout lieu\n\n— Refrain —\nSur l'honneur nous promettons\nD'être dignes scouts demain\nK2TH dans nos cœurs\nJusqu'au bout du chemin\n\n— Verse 2 —\nFidèles à la promesse\nQue nous avons jurée\nScouts de Madagascar\nToujours prêts pour servir"
+    }
+  ]
+}

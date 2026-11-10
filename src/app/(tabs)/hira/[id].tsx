@@ -23,7 +23,7 @@ import { DetailHeader } from '../../../components/AppHeader';
 import { Badge } from '../../../components/Badge';
 import { useDatabase } from '../../../context/DatabaseContext';
 import { useUi } from '../../../context/UiContext';
-import { mediaFileExists, mediaFileUri } from '../../../lib/mediaStore';
+import { mediaAudioSource } from '../../../lib/mediaStore';
 import { fonts, type ThemeColors, themed } from '../../../theme/theme';
 import { useTheme } from '../../../context/SettingsContext';
 
@@ -38,8 +38,8 @@ export default function HiraDetailScreen() {
   const item = chants.find((chant) => chant.id === Number(id));
   const { addHistory } = useUi();
 
-  const hasAudio = Boolean(item?.audioKey && mediaFileExists(item.audioKey));
-  const audioUri = hasAudio ? mediaFileUri(item!.audioKey) : null;
+  const audioSource = item ? mediaAudioSource(item.audioKey) : null;
+  const hasAudio = audioSource !== null;
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -56,7 +56,7 @@ export default function HiraDetailScreen() {
     }
   }, [item, addHistory, t]);
 
-  const audioPlayer = useAudioPlayer(audioUri);
+  const audioPlayer = useAudioPlayer(audioSource);
   const audioStatus = useAudioPlayerStatus(audioPlayer);
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ActivityIndicator, Alert, Image as RNImage, Pressable, StyleSheet, Text, View } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import * as ImagePicker from 'expo-image-picker';
-import { isMediaImportAvailable, mediaFileUri, saveMediaFromUri } from '../../lib/mediaStore';
+import { isMediaImportAvailable, mediaImageSource, saveMediaFromUri } from '../../lib/mediaStore';
 import { fonts, type ThemeColors, themed } from '../../theme/theme';
 import { useTheme } from '../../context/SettingsContext';
 
@@ -73,7 +73,7 @@ export function MediaPickerField({ label, value, onChange, kind, prefix, fileNam
       {value ? (
         <View style={styles.current}>
           {kind === 'image' ? (
-            <RNImage source={{ uri: mediaFileUri(value) }} style={styles.thumb} resizeMode="cover" />
+            <RNImage source={mediaImageSource(value) ?? undefined} style={styles.thumb} resizeMode="cover" />
           ) : (
             <View style={styles.thumbFallback}>
               <Text style={styles.thumbFallbackText}>♪</Text>

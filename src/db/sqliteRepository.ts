@@ -1,9 +1,6 @@
 import * as SQLite from 'expo-sqlite';
-import { CHANTS } from '../data/chants';
-import { CODES } from '../data/codes';
+import seed from '../data/content.json';
 import { buildSeedHistory } from '../data/history';
-import { KOJAS } from '../data/kojas';
-import { TECHNIQUES } from '../data/techniques';
 import { deleteMediaFiles } from '../lib/mediaStore';
 import type {
   ChantItem,
@@ -25,7 +22,6 @@ import {
 import { SCHEMA_SQL } from './schema';
 
 const DATABASE_NAME = 'k2th-scout.db';
-const CONTENT_VERSION = '1';
 const MEDIA_MIGRATION_KEY = 'media_columns_migrated';
 
 let databasePromise: Promise<SQLite.SQLiteDatabase> | null = null;
@@ -89,7 +85,7 @@ async function initialize() {
 }
 
 async function seedContent(db: SQLite.SQLiteDatabase) {
-  if ((await readMeta(db, 'content_version')) === CONTENT_VERSION) {
+  if ((await readMeta(db, 'content_version')) === String(seed.version)) {
     return;
   }
 
@@ -99,7 +95,7 @@ async function seedContent(db: SQLite.SQLiteDatabase) {
     await db.runAsync('DELETE FROM techniques');
     await db.runAsync('DELETE FROM chants');
 
-    for (const code of CODES) {
+    for (const code of seed.codes) {
       await db.runAsync(
         'INSERT INTO codes (id, name, icon, description, type) VALUES (?, ?, ?, ?, ?)',
         [code.id, code.name, code.icon, code.desc, code.type],
@@ -112,7 +108,7 @@ async function seedContent(db: SQLite.SQLiteDatabase) {
       }
     }
 
-    for (const koja of KOJAS) {
+    for (const koja of seed.kojas) {
       await db.runAsync(
         'INSERT INTO kojas (id, title, date, image_key, cover_key, description) VALUES (?, ?, ?, ?, ?, ?)',
         [koja.id, koja.title, koja.date, koja.imageKey, koja.coverKey, koja.desc],
@@ -132,7 +128,7 @@ async function seedContent(db: SQLite.SQLiteDatabase) {
       }
     }
 
-    for (const technique of TECHNIQUES) {
+    for (const technique of seed.techniques) {
       await db.runAsync(
         `INSERT INTO techniques (id, name, icon, icon_key, category, level, level_color, description)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -155,7 +151,7 @@ async function seedContent(db: SQLite.SQLiteDatabase) {
       }
     }
 
-    for (const chant of CHANTS) {
+    for (const chant of seed.chants) {
       await db.runAsync(
         `INSERT INTO chants (id, title, artist, duration, genre, gradient_from, gradient_to, audio_key)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -179,7 +175,7 @@ async function seedContent(db: SQLite.SQLiteDatabase) {
       }
     }
 
-    await writeMeta(db, 'content_version', CONTENT_VERSION);
+    await writeMeta(db, 'content_version', String(seed.version));
   });
 }
 

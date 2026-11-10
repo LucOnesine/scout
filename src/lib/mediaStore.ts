@@ -1,5 +1,6 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import { Platform, type ImageSourcePropType } from 'react-native';
+import { BUNDLED_MEDIA } from '../data/bundledMedia';
 
 const MEDIA_DIRECTORY_NAME = 'k2th-media';
 
@@ -74,5 +75,29 @@ export function deleteMediaFiles(keys: string[]) {
 }
 
 export function mediaImageSource(key: string): ImageSourcePropType | null {
-  return mediaFileExists(key) ? { uri: mediaFileUri(key) } : null;
+  if (mediaFileExists(key)) {
+    return { uri: mediaFileUri(key) };
+  }
+  return BUNDLED_MEDIA[key] ?? null;
+}
+
+export function mediaAudioSource(key: string): string | number | null {
+  if (!key) {
+    return null;
+  }
+  if (mediaFileExists(key)) {
+    return mediaFileUri(key);
+  }
+  return BUNDLED_MEDIA[key] ?? null;
+}
+
+export async function mediaFileBase64(key: string): Promise<string | null> {
+  if (!mediaFileExists(key)) {
+    return null;
+  }
+  try {
+    return await new File(mediaDirectory(), key).base64();
+  } catch {
+    return null;
+  }
 }

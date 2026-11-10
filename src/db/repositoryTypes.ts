@@ -18,14 +18,6 @@ export type ContentItemMap = {
 
 export type ContentItem = ContentItemMap[ContentKind];
 
-export type StoredHistoryEntry = {
-  id: number;
-  type: string;
-  action: string;
-  icon: string;
-  createdAt: number;
-};
-
 export type Repository = {
   loadContent: () => Promise<ContentData>;
   saveContent: <K extends ContentKind>(kind: K, item: ContentItemMap[K]) => Promise<ContentData>;
